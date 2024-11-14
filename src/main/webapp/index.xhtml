@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+    <title>Filter Numbers or Letters</title>
+</h:head>
+<h:body>
+    <h1>Enter Text and Choose Filter</h1>
+
+    <h:form>
+        <h:outputText value="Enter a phrase: " />
+        <h:inputText value="#{filterBean.inputText}" />
+
+        <h:outputText value="Filter Type: " />
+        <h:selectBooleanCheckbox value="#{filterBean.showNumbers}" />
+        <h:outputText value="Show Numbers" />
+
+        <h:selectBooleanCheckbox value="#{filterBean.showLetters}" />
+        <h:outputText value="Show Letters" />
+
+        <br/><br/>
+        <h:commandButton value="Filter" action="#{filterBean.filterText}" />
+
+        <h:outputText value="Filtered Result: " />
+        <h:outputText value="#{filterBean.filteredText}" />
+    </h:form>
+</h:body>
+</html>
